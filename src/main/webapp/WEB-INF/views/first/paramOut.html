@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>ParamOutput</title>
+    <title>Hello Page</title>
 </head>
 <body>
-<!--/*@thymesVar id="name" type="com.marat.spring"*/-->
-<!--/*@thymesVar id="surname" type="com.marat.spring"*/-->
-<h1 th:text="'Hello, ' + ${name} + ' ' + ${surname}"></h1>
+<p th:text="'Calculator of : ' + ${a} + ' ' + ${b} + ' with operation' + ' ' + ${operation} + ' = ' + ${result}"></p>
+<!--<h1 th:if="${name} == null or ${surname} == null">Parameters are missing.</h1>-->
 </body>
 </html>
