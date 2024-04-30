@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<htmldd lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People Page</title>
+</head>
+<body>
+<div th:each="person : ${people}">
+    <a th:href="@{people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
+</div>
+</body>
+</htmldd >
