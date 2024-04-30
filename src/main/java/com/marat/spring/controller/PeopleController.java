@@ -1,6 +1,7 @@
 package com.marat.spring.controller;
 
 import com.marat.spring.dao.PersonDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/people")
+@RequestMapping("/peopleList")
 public class PeopleController {
     private final PersonDAO personDAO;
     public PeopleController(PersonDAO personDAO) {
@@ -17,13 +18,14 @@ public class PeopleController {
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("people", personDAO.index());
+        model.addAttribute("peopleList", personDAO.index());
         return "people/index";
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}") // Add {id} path variable
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.show(id));
         return "people/show";
     }
+
 }
