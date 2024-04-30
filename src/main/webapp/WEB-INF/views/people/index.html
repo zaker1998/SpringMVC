@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<htmldd lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>People Page</title>
+    <title>Show Page</title>
 </head>
 <body>
-<div th:each="person : ${people}">
-    <a th:href="@{people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
-</div>
+<p th:text="${person.getName()}">VALUE</p>
+<p th:text="${person.getId()}">VALUE</p>
 </body>
-</htmldd >
+</html>
