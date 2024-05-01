@@ -30,6 +30,7 @@ public class PersonDAO {
     }
 
     public void save(Person person) {
-
+        person.setId(++PEOPLE_COUNT);
+        peoplesList.add(person);
     }
 }
